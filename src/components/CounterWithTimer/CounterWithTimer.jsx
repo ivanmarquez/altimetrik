@@ -19,9 +19,17 @@ const CounterWithTimer = () => {
 		}
 	};
 
+	const restartTimer = () => {
+		setSeconds(10);
+		setCounter(0);
+	};
+
 	return (
 		<div>
 			<h1>{counter}</h1>
+            {seconds === 0 && (
+				<button onClick={restartTimer}>Restart</button>
+			)}
 			<h2>Time left: {seconds} seconds</h2>
 			{seconds > 0 && (
 				<button onClick={incrementCounter}>Increment</button>
